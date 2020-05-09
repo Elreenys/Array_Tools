@@ -60,9 +60,9 @@ class UIPANEL_PT_trans(UIPANEL_PT_def):
             box = layout.box()
             split = box.split(factor=0.6)
             if scn.unit_settings.system_rotation == 'DEGREES':
-                split.label(text="Rotation (degrees)")
+                split.label(text="Rotation (Degrees)")
             else:
-                split.label(text="Rotation (radians)")
+                split.label(text="Rotation (Radians)")
             row = split.row()
             row.prop(my_prop, 'rot_axis', expand=True)
 
@@ -88,13 +88,13 @@ class UIPANEL_PT_trans(UIPANEL_PT_def):
             row = box.row()
             row.scale_y = 0.3
             row.alignment = 'CENTER'
-            row.label(text="~ Tansforms are NOT applied ~")
+            row.label(text="~ Transforms are NOT applied ~")
 
 
 class UIPANEL_PT_rows(UIPANEL_PT_def):
     """Panel containing the row options"""
     bl_parent_id = 'UIPANEL_PT_trans'
-    bl_label = 'Rows options'
+    bl_label = 'Rows Options'
     bl_options = {'DEFAULT_CLOSED'}
 
     def draw(self, context):
@@ -115,7 +115,7 @@ class UIPANEL_PT_rows(UIPANEL_PT_def):
             row.alignment = 'CENTER'
             row.scale_x = 1.5
             row.scale_y = 0.6
-            row.label(text=" - Offset settings -")
+            row.label(text=" - Offset Settings -")
             row.scale_x = 0.8
             row.operator('scene.at_reset_second')
 
@@ -133,13 +133,13 @@ class UIPANEL_PT_rows(UIPANEL_PT_def):
 
             row = layout.row()
             row.scale_y = 0.5
-            row.label(text="Total : " + my_prop.total + "    |    current row : " + my_prop.erow)        
+            row.label(text="Total : " + my_prop.total + "    |    current Row : " + my_prop.erow)        
 
 
 class UIPANEL_PT_options(UIPANEL_PT_def):
     """Panel containing the random options"""
     bl_parent_id = 'UIPANEL_PT_trans'
-    bl_label = 'Random options'
+    bl_label = 'Random Options'
     bl_options = {'DEFAULT_CLOSED'}
 
     def draw(self, context):
@@ -248,7 +248,7 @@ class ArrayToolsPrefs(AddonPreferences):
 
     category: bpy.props.StringProperty(
         name="Category",
-        default="Array tools",
+        default="Array Tools",
         update=update_category
     )
 
@@ -261,7 +261,7 @@ class ArrayToolsPrefs(AddonPreferences):
         row.label(text=" ~ Choose the tab name for the addon. ~")
         row = layout.row()
         row.alignment = 'CENTER'
-        row.label(text = "Tab name: ")
+        row.label(text = "Tab Name: ")
         row.alignment = 'LEFT'
         row.prop(self, 'category', text='')
 
